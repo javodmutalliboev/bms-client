@@ -1,0 +1,39 @@
+#i1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#i2 {
+  max-width: 500px;
+  background-color: white;
+  padding: 16px;
+  overflow: auto;
+}
+
+h3 {
+  font-weight: unset;
+  margin: unset;
+}
+
+.input {
+  display: grid;
+  column-gap: normal;
+  padding: 8px 0;
+}
+
+form {
+  width: 300px;
+}
+
+.ng-dirty.ng-touched.ng-invalid {
+  border-color: red;
+  outline-color: red;
+}
+
+form.ng-invalid.ng-submitted input.ng-invalid {
+  border-color: red;
+  outline-color: red;
+}

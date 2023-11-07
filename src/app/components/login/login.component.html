@@ -1,0 +1,35 @@
+<div id="i1">
+  <div id="i2">
+    <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+      <h3>Login</h3>
+      <hr />
+      <div class="input">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          required
+          autocomplete
+          name="email"
+          ngModel
+        />
+      </div>
+
+      <div class="input">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          autocomplete
+          name="password"
+          ngModel
+        />
+      </div>
+
+      <div>
+        <button type="submit" mat-raised-button>Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

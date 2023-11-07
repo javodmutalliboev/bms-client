@@ -1,0 +1,32 @@
+h1,
+h2 {
+  text-align: center;
+  font-weight: unset;
+}
+
+#i1a {
+  overflow-x: auto;
+}
+
+#i1 {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 16px 128px;
+  box-shadow: -0.2px -0.2px 1px 1px #777;
+  background-color: #edf9ff;
+}
+
+#i2 {
+  display: flex;
+  justify-content: center;
+}
+
+#i1b {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
