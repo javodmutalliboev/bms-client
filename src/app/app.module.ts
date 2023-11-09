@@ -8,23 +8,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { CollectionsComponent } from './components/collections/collections.component';
+import { routes } from './routes';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
-  declarations: [AppComponent, EntranceComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    EntranceComponent,
+    LoginComponent,
+    CollectionsComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: EntranceComponent },
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-    ]),
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

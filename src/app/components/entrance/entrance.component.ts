@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntranceComponent implements OnInit {
   ngOnInit() {
-    console.log('open');
+    // console.log('open');
   }
 }
