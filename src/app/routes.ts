@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { outGuard } from './guards/out.guard';
 import { CollectionsComponent } from './components/collections/collections.component';
 import { authGuard } from './guards/auth.guard';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,11 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [outGuard],
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
     canActivate: [outGuard],
   },
   {

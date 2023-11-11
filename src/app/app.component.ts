@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './models/user.model';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,19 @@ import { User } from './models/user.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(private cookieService: CookieService) {}
+  constructor(
+    private cookieService: CookieService,
+    private authService: AuthService
+  ) {}
   title = 'bms-client';
 
   ngOnInit(): void {}
 
   get user(): User {
-    return JSON.parse(this.cookieService.get('user'));
+    if (this.authService.loggedIn()) {
+      return JSON.parse(this.cookieService.get('user'));
+    } else {
+      return null!;
+    }
   }
 }

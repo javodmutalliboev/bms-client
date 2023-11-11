@@ -1,0 +1,13 @@
+<div id="i1">
+  <div id="i2">
+    <div>Signup</div>
+    <hr />
+    <form #signupForm="ngForm" (submit)="onSubmit(signupForm)">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" required name="email" [pattern]="email" ngModel />
+      </div>
+      <button mat-raised-button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CollectionsComponent } from './components/collections/collections.component';
 import { routes } from './routes';
 import { CookieService } from 'ngx-cookie-service';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
     EntranceComponent,
     LoginComponent,
     CollectionsComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
