@@ -5,9 +5,25 @@
     <form #signupForm="ngForm" (submit)="onSubmit(signupForm)">
       <div>
         <label for="email">Email:</label>
-        <input type="email" required name="email" [pattern]="email" ngModel />
+        <input
+          type="email"
+          required
+          name="email"
+          [pattern]="pattern"
+          #email
+          ngModel
+        />
+        <p *ngIf="emailExists(email.value)" style="color: red; margin: 0">
+          account with this email already exists
+        </p>
       </div>
-      <button mat-raised-button type="submit">Submit</button>
+      <button
+        [disabled]="emailExists(email.value)"
+        mat-raised-button
+        type="submit"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </div>
