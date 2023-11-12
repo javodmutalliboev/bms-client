@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.development';
 
@@ -11,14 +12,20 @@ import { environment } from 'src/environments/environment.development';
 })
 export class SignUpComponent implements OnInit {
   onSubmit(form: NgForm) {
-    console.log(form);
+    if (form.invalid) {
+      return;
+    }
+
+    this.sendEmail(form.value.email);
   }
 
   pattern = /^[\w\d]+@[\w\d]+\.[\w\d]+$/;
+  passwordPattern = /^[\w\d]{8,}$/;
 
   constructor(
     private httpClient: HttpClient,
-    private toastService: ToastrService
+    private toastService: ToastrService,
+    private cookieService: CookieService
   ) {}
 
   euList: string[] = [];
@@ -42,5 +49,37 @@ export class SignUpComponent implements OnInit {
         });
       },
     });
+  }
+
+  get sentEmail() {
+    return this.cookieService.get('mailSent');
+  }
+
+  sendingEmail = false;
+  sendEmail(email: string) {
+    this.sendingEmail = true;
+    this.httpClient
+      .post(`${environment.apiUrl}/sendEmail`, { email })
+      .subscribe({
+        next: (response) => {
+          this.sendingEmail = false;
+          this.toastService.success('Email sent', '');
+          this.cookieService.set(
+            'mailSent',
+            'true',
+            3600,
+            '/signup',
+            `${environment.domain}`,
+            environment.https,
+            'Strict'
+          );
+        },
+        error: (err) => {
+          this.sendingEmail = false;
+          this.toastService.error('An error occurred', '', {
+            disableTimeOut: true,
+          });
+        },
+      });
   }
 }

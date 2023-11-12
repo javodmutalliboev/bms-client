@@ -2,7 +2,11 @@
   <div id="i2">
     <div>Signup</div>
     <hr />
-    <form #signupForm="ngForm" (submit)="onSubmit(signupForm)">
+    <form
+      *ngIf="!sentEmail"
+      #signupForm="ngForm"
+      (submit)="onSubmit(signupForm)"
+    >
       <div>
         <label for="email">Email:</label>
         <input
@@ -25,5 +29,38 @@
         Submit
       </button>
     </form>
+    <div *ngIf="sentEmail">
+      <p>
+        An email verification code is sent to your email. Please open your
+        email, memorize the code, enter it in the input field below and submit.
+      </p>
+      <form></form>
+    </div>
+    <!-- <form *ngIf="sentEmail" #passwordForm="ngForm">
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          required
+          name="password"
+          ngModel
+          #password="ngModel"
+          [pattern]="passwordPattern"
+        />
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          required
+          name="confirmPassword"
+          ngModel
+          #confirmPassword="ngModel"
+          [pattern]="'/^' + password.value + '$/'"
+        />
+        <p *ngIf="confirmPassword.errors">passwords do not match</p>
+      </div>
+      <button type="submit" mat-raised-button>Submit</button>
+    </form> -->
   </div>
 </div>
