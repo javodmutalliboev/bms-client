@@ -14,6 +14,7 @@ import { CollectionsComponent } from './components/collections/collections.compo
 import { routes } from './routes';
 import { CookieService } from 'ngx-cookie-service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { PendingComponent } from './components/pending/pending.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     LoginComponent,
     CollectionsComponent,
     SignUpComponent,
+    PendingComponent,
   ],
   imports: [
     BrowserModule,

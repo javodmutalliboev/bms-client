@@ -9,6 +9,7 @@
 #i2 {
   background-color: white;
   padding: 16px;
+  max-width: 300px;
 }
 
 form > div {

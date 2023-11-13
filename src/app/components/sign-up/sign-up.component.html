@@ -3,7 +3,7 @@
     <div>Signup</div>
     <hr />
     <form
-      *ngIf="!sentEmail"
+      *ngIf="!sentEmail && !emailVerified"
       #signupForm="ngForm"
       (submit)="onSubmit(signupForm)"
     >
@@ -29,38 +29,58 @@
         Submit
       </button>
     </form>
-    <div *ngIf="sentEmail">
+    <div *ngIf="sentEmail && !emailVerified">
       <p>
-        An email verification code is sent to your email. Please open your
-        email, memorize the code, enter it in the input field below and submit.
+        An email verification code is sent to your email. Please enter it in the
+        input field below and submit.
       </p>
-      <form></form>
+      <form
+        #verificationCodeForm="ngForm"
+        (submit)="verificationCodeSubmit(verificationCodeForm)"
+      >
+        <div>
+          <label for="code">Verification Code:</label>
+          <input type="number" required name="code" ngModel #code="ngModel" />
+        </div>
+        <button mat-raised-button type="submit">Submit</button>
+      </form>
     </div>
-    <!-- <form *ngIf="sentEmail" #passwordForm="ngForm">
-      <div>
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          required
-          name="password"
-          ngModel
-          #password="ngModel"
-          [pattern]="passwordPattern"
-        />
-      </div>
-      <div>
-        <label for="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          required
-          name="confirmPassword"
-          ngModel
-          #confirmPassword="ngModel"
-          [pattern]="'/^' + password.value + '$/'"
-        />
-        <p *ngIf="confirmPassword.errors">passwords do not match</p>
-      </div>
-      <button type="submit" mat-raised-button>Submit</button>
-    </form> -->
+    <div *ngIf="!sentEmail && emailVerified">
+      <p>Your email is verified. Please set a password for your account.</p>
+      <form #passwordForm="ngForm" (ngSubmit)="submitPassword(passwordForm)">
+        <div>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            required
+            name="password"
+            ngModel
+            #password="ngModel"
+            [pattern]="passwordPattern"
+            autocomplete
+          />
+          <p *ngIf="password.errors?.['pattern']">
+            password should be made of at least 8 alphanumeric characters
+          </p>
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            required
+            name="confirmPassword"
+            ngModel
+            #confirmPassword="ngModel"
+            [pattern]="password.value"
+            autocomplete
+          />
+          <p *ngIf="confirmPassword.errors?.['pattern']">
+            passwords do not match
+          </p>
+        </div>
+        <button type="submit" mat-raised-button>Submit</button>
+      </form>
+    </div>
   </div>
 </div>
+<app-pending *ngIf="gettingEuList || sendingEmail || submitting"></app-pending>

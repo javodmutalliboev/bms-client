@@ -1,0 +1,9 @@
+div {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  cursor: wait;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
