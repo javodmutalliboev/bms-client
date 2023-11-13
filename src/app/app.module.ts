@@ -15,6 +15,7 @@ import { routes } from './routes';
 import { CookieService } from 'ngx-cookie-service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PendingComponent } from './components/pending/pending.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PendingComponent } from './components/pending/pending.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
+    MatIconModule,
     FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
