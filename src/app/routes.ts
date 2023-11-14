@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { EntranceComponent } from './components/entrance/entrance.component';
 import { LoginComponent } from './components/login/login.component';
 import { outGuard } from './guards/out.guard';
-import { CollectionsComponent } from './components/collections/collections.component';
 import { authGuard } from './guards/auth.guard';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ParentComponent } from './components/parent/parent.component';
 
 export const routes: Routes = [
   {
@@ -23,8 +23,8 @@ export const routes: Routes = [
     canActivate: [outGuard],
   },
   {
-    path: 'collections',
-    component: CollectionsComponent,
+    path: 'room',
+    component: ParentComponent,
     canActivate: [authGuard],
   },
 

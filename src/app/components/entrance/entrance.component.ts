@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrance.component.css'],
 })
 export class EntranceComponent implements OnInit {
-  ngOnInit() {
-    // console.log('open');
-  }
+  ngOnInit() {}
 }

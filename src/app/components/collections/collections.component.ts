@@ -9,7 +9,5 @@ import { CookieService } from 'ngx-cookie-service';
 export class CollectionsComponent implements OnInit {
   constructor(private cookieService: CookieService) {}
 
-  ngOnInit(): void {
-    console.log(JSON.parse(this.cookieService.get('user')));
-  }
+  ngOnInit(): void {}
 }

@@ -16,6 +16,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ParentComponent } from './components/parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
     CollectionsComponent,
     SignUpComponent,
     PendingComponent,
+    ParentComponent,
   ],
   imports: [
     BrowserModule,

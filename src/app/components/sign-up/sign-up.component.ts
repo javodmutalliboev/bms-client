@@ -135,7 +135,6 @@ export class SignUpComponent implements OnInit {
 
   submitPassword(form: NgForm) {
     if (form.invalid) {
-      console.log(form);
       return;
     }
 
