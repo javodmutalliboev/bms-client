@@ -23,9 +23,13 @@ export const routes: Routes = [
     canActivate: [outGuard],
   },
   {
-    path: 'room',
+    path: 'client',
     component: ParentComponent,
     canActivate: [authGuard],
+    loadChildren: () =>
+      import('./administrator/administrator.module').then(
+        (m) => m.AdministratorModule
+      ),
   },
 
   {

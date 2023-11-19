@@ -22,3 +22,8 @@
 img {
   width: 22px;
 }
+
+#i2 > div > span {
+  color: white;
+  margin-left: 4px;
+}

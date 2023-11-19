@@ -36,7 +36,7 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           this.loggingIn = false;
-          this.router.navigate(['collections']);
+          this.router.navigate(['client']);
         },
         error: (error) => {
           this.loggingIn = false;

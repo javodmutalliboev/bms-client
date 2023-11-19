@@ -7,7 +7,7 @@ export const outGuard: CanActivateFn = (route, state) => {
   const router: Router = inject(Router);
 
   if (authService.loggedIn()) {
-    router.navigate(['room']);
+    router.navigate(['client']);
     return false;
   }
 
