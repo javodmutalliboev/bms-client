@@ -25,5 +25,9 @@ img {
 
 #i2 > div > span {
   color: white;
-  margin-left: 4px;
+  margin-left: 12px;
+}
+
+#wrapper {
+  height: 100%;
 }

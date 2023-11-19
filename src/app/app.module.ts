@@ -16,8 +16,6 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ParentComponent } from './components/parent/parent.component';
-import { AdministratorComponent } from './components/administrator/administrator.component';
-import { SubscriberComponent } from './components/subscriber/subscriber.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +25,6 @@ import { SubscriberComponent } from './components/subscriber/subscriber.componen
     SignUpComponent,
     PendingComponent,
     ParentComponent,
-    AdministratorComponent,
-    SubscriberComponent,
   ],
   imports: [
     BrowserModule,

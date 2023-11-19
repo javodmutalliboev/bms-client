@@ -14,4 +14,14 @@ export class AuthService {
     }
     return false;
   }
+
+  administrator(): boolean {
+    if (this.cookieService.get('user')) {
+      const user = JSON.parse(this.cookieService.get('user'));
+      if (user.role === 'administrator') {
+        return true;
+      }
+    }
+    return false;
+  }
 }
