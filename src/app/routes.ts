@@ -27,9 +27,7 @@ export const routes: Routes = [
     component: ParentComponent,
     canActivate: [authGuard],
     loadChildren: () =>
-      import('./administrator/administrator.module').then(
-        (m) => m.AdministratorModule
-      ),
+      import('./client/client.module').then((m) => m.ClientModule),
   },
 
   {

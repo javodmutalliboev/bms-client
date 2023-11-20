@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { AdministratorComponent } from './components/administrator/administrator.component';
 import { administratorGuard } from '../guards/administrator.guard';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: AdministratorComponent,
+    path: 'administrator',
     canActivate: [administratorGuard],
     loadChildren: () =>
-      import('./content/content.module').then((m) => m.ContentModule),
+      import('../administrator/administrator.module').then(
+        (m) => m.AdministratorModule
+      ),
   },
 ];

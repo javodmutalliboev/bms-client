@@ -15,9 +15,6 @@
   width: 100%;
 }
 
-#nav > div {
-}
-
 #nav > div:hover {
   cursor: pointer;
   background-color: rgb(157, 163, 255);
@@ -32,4 +29,14 @@ a {
 
 a.active {
   background-color: rgb(157, 163, 255);
+}
+
+@media only screen and (max-width: 480px) {
+  #nav {
+    max-width: 50px;
+  }
+
+  a {
+    padding: 16px 4px;
+  }
 }
