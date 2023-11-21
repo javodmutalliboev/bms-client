@@ -2,3 +2,9 @@
   background-image: url("../assets/gettyimages-1245203807-1536x1029_wide-9982607ca51f99999656d993bf5511d42533c0f2-s1100-c50.jpg");
   overflow: hidden;
 }
+
+#i1 {
+  position: relative;
+  z-index: 900;
+  overflow-y: auto;
+}

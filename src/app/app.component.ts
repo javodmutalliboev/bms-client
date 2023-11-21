@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './models/user.model';
 import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
   title = 'bms-client';
 

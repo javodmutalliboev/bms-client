@@ -1,0 +1,20 @@
+#i1 {
+  padding: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+table {
+  min-width: 800px;
+  width: 100%;
+}
+
+mat-paginator {
+  width: 100%;
+}
+
+div.mat-elevation-z8 > div {
+  overflow-x: auto;
+}

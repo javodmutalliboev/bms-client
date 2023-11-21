@@ -40,3 +40,8 @@ a.active {
     padding: 16px 4px;
   }
 }
+
+#content {
+  overflow-y: auto;
+  padding-bottom: 64px;
+}
