@@ -9,10 +9,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { PendingComponent } from 'src/app/components/pending/pending.component';
+import { PendingComponent2 } from './components/pending/pending2.component';
 
 @NgModule({
-  declarations: [HomeComponent, UsersComponent, PendingComponent],
+  declarations: [HomeComponent, UsersComponent, PendingComponent2],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

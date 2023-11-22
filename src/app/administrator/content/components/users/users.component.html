@@ -56,9 +56,9 @@
     </div>
 
     <mat-paginator
-      [pageSizeOptions]="[1, 5, 10, 20]"
+      [pageSizeOptions]="[5, 10, 20, 40]"
       aria-label="Select page of users"
     ></mat-paginator>
   </div>
 </div>
-<app-pending *ngIf="loading"></app-pending>
+<app-pending2 *ngIf="loading"></app-pending2>

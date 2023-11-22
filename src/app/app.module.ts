@@ -16,6 +16,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ParentComponent } from './components/parent/parent.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ParentComponent } from './components/parent/parent.component';
     FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
+    MatMenuModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

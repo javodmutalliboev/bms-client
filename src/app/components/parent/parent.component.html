@@ -6,7 +6,12 @@
       >
     </div>
     <div>
-      <mat-icon style="color: white">more_vert</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="actionsMenu">
+        <mat-icon style="color: white">more_vert</mat-icon>
+      </button>
+      <mat-menu #actionsMenu="matMenu" xPosition="before">
+        <div mat-menu-item>Log out</div>
+      </mat-menu>
     </div>
   </div>
   <div id="wrapper">

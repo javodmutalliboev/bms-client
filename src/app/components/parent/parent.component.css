@@ -31,3 +31,8 @@ img {
 #wrapper {
   height: 100%;
 }
+
+#i2 > div:nth-child(2) {
+  padding: 0;
+  overflow: hidden;
+}
