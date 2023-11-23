@@ -36,3 +36,17 @@ img {
   padding: 0;
   overflow: hidden;
 }
+
+::ng-deep .mat-mdc-menu-content {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-mdc-menu-item {
+  min-height: 40px !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-mdc-menu-item-text {
+  max-width: unset !important;
+  width: 100% !important;
+}

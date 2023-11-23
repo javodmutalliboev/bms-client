@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './models/user.model';
 import { AuthService } from './services/auth.service';
@@ -13,17 +13,20 @@ export class AppComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private authService: AuthService,
-    private router: Router
+    private cdr: ChangeDetectorRef
   ) {}
   title = 'bms-client';
-
+  user!: User;
   ngOnInit(): void {}
 
-  get user(): User {
+  userAssign() {
     if (this.authService.loggedIn()) {
-      return JSON.parse(this.cookieService.get('user'));
+      const stringUser: string = this.cookieService.get('user');
+      this.user = stringUser ? JSON.parse(stringUser) : null!;
+      this.cdr.detectChanges();
     } else {
-      return null!;
+      this.user = null!;
+      this.cdr.detectChanges();
     }
   }
 }

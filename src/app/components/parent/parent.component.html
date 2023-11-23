@@ -10,7 +10,16 @@
         <mat-icon style="color: white">more_vert</mat-icon>
       </button>
       <mat-menu #actionsMenu="matMenu" xPosition="before">
-        <div mat-menu-item>Log out</div>
+        <div mat-menu-item>
+          <button
+            style="width: 100%"
+            mat-stroked-button
+            color="primary"
+            (click)="logout()"
+          >
+            Log out
+          </button>
+        </div>
       </mat-menu>
     </div>
   </div>
@@ -18,3 +27,4 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+<app-pending *ngIf="pending"></app-pending>
