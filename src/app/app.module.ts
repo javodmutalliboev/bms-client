@@ -17,6 +17,7 @@ import { PendingComponent } from './components/pending/pending.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ParentComponent } from './components/parent/parent.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu';
     SignUpComponent,
     PendingComponent,
     ParentComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

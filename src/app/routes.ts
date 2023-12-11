@@ -5,6 +5,7 @@ import { outGuard } from './guards/out.guard';
 import { authGuard } from './guards/auth.guard';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ParentComponent } from './components/parent/parent.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,11 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [outGuard],
+  },
+  {
+    path: 'fp',
+    component: ForgotPasswordComponent,
     canActivate: [outGuard],
   },
   {
