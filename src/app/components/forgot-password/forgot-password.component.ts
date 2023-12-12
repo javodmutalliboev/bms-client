@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -7,6 +8,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent {
+  constructor(private httpClient: HttpClient) {}
+
   pattern = /^[\w\d]+@[\w\d]+\.[\w\d]+$/;
 
   onSubmit(form: NgForm) {
