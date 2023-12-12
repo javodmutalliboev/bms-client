@@ -57,7 +57,7 @@
             ngModel
             #password="ngModel"
             [pattern]="passwordPattern"
-            autocomplete
+            autocomplete="off"
           />
           <p *ngIf="password.errors?.['pattern']">
             password should be made of at least 8 alphanumeric characters
@@ -72,7 +72,7 @@
             ngModel
             #confirmPassword="ngModel"
             [pattern]="password.value"
-            autocomplete
+            autocomplete="off"
           />
           <p *ngIf="confirmPassword.errors?.['pattern']">
             passwords do not match
